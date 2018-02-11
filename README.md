@@ -5,7 +5,7 @@ The Eye of Maria is a project developed for Hack the Deep, American Museum of Na
 
 
 
-<a href="https://imgflip.com/gif/24d8zz"><img src="https://i.imgflip.com/24d8zz.gif" /></a>
+<img src="https://i.imgflip.com/24d8zz.gif" /></a>
 
 ## [Live Demo ✨](https://hackthedeep.github.io/the-eye-of-maria/)
 
