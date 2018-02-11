@@ -108,6 +108,15 @@
         console.log(storm);
       });
 
+      var el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = 'url(images/eye.svg)';
+      el.style.width =  '40px';
+      el.style.height = '40px';
+      var marker = new mapboxgl.Marker(el)
+        marker.setLngLat([-50.5,12.2])
+        .addTo(map);
+
       document.getElementById('slider').addEventListener('input', function(e) {
         var queryDate = e.target.value;
         var queryDateObj = new Date(+queryDate).toString();
@@ -118,7 +127,7 @@
           if (p['date'] <= queryDate) {
             currentTrackPoint = p;
           } else {
-            map.getSource("storm").setData({'type':'Point','coordinates':[currentTrackPoint.lon,currentTrackPoint.lat]})
+            marker.setLngLat([currentTrackPoint.lon,currentTrackPoint.lat])
           }
         });
 
