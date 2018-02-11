@@ -9,13 +9,6 @@
     "floats": {
       "type":"geojson",
       "data":"datasets/floats.geojson"
-    },
-    "storm": {
-      "type":"geojson",
-      "data":{
-        "type":"FeatureCollection",
-        "features":[]
-      }
     }
   },
   "layers": [
@@ -42,15 +35,6 @@
         "paint": {
             "circle-radius":5,
             "circle-color": "blue"
-        }
-    },
-    {
-        "id": "storm",
-        "type": "circle",
-        "source": "storm",
-        "paint": {
-            "circle-radius":5,
-            "circle-color": "red"
         }
     }
   ]
