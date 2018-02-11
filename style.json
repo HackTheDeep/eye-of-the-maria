@@ -6,9 +6,9 @@
       "type": "vector",
       "url": "mapbox://mapbox.mapbox-streets-v7"
     },
-    "floats": {
+    "drifters": {
       "type":"geojson",
-      "data":"datasets/floats.geojson"
+      "data":"datasets/drifters.geojson"
     }
   },
   "layers": [
@@ -16,7 +16,7 @@
       "id": "background",
       "type": "background",
       "paint": {
-          "background-color": "#dedede"
+          "background-color": "#cccccc"
       }
     },
     {
@@ -25,16 +25,21 @@
         "source": "mapbox",
         "source-layer": "water",
         "paint": {
-            "fill-color": "#a0cfdf"
+            "fill-color": "#222222"
         }
     },
     {
-        "id": "floats",
+        "id": "drifters",
         "type": "circle",
-        "source": "floats",
+        "source": "drifters",
         "paint": {
-            "circle-radius":5,
-            "circle-color": "blue"
+            "circle-radius":2,
+            "circle-color": ["case",
+                ["all",
+                  [">=",["to-number",["get","timestamp"]],1505574000000],
+                  ["<=",["to-number",["get","timestamp"]],1506805200000]
+                ],"red","blue"],
+            "circle-opacity":0.1
         }
     }
   ]
