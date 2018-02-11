@@ -1,14 +1,12 @@
-# eye-of-maria
-Project developed for Hack the Deep, American Museum of Natural Historys 4th annual BridgeUP: STEM hackathon. 
+# The Eye of Maria AMNH Challenge
 
-Challenge: Creating Animations and Interactive Tools to Understand the Motion of Sailing Objects in the Vicinity of a Hurricane.
+The Eye of Maria is a project developed for Hack the Deep, American Museum of Natural Historys 4th annual BridgeUP: STEM hackathon to tackel the challegne of creating animations and interactive tools to understand the motion of sailing objects in the vicinity of a hurricane.[(x)](https://github.com/amnh/HackTheDeep/wiki/The-Eye-of-Maria)
 
-[Live Demo](https://hackthedeep.github.io/the-eye-of-maria/)
 
-https://github.com/amnh/HackTheDeep/wiki/The-Eye-of-Maria
+
 
 <a href="https://imgflip.com/gif/24d8zz"><img src="https://i.imgflip.com/24d8zz.gif" /></a>
-
+[Live Demo](https://hackthedeep.github.io/the-eye-of-maria/)
 
 
 
