@@ -14,4 +14,10 @@ The Eye of Maria is a project developed for Hack the Deep, American Museum of Na
 
 Credits:
 Hurricane by Masrur Mahmood from the Noun Project
-Developed by 
+
+Development Team:
+Brandon Liu
+Navie Narula
+Karoline Dubin
+Teresa Miller
+Caroline White
