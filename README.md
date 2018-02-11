@@ -17,7 +17,11 @@ Hurricane by Masrur Mahmood from the Noun Project
 
 Development Team:
 Brandon Liu
+
 Navie Narula
+
 Karoline Dubin
+
 Teresa Miller
+
 Caroline White
