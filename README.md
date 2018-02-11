@@ -6,9 +6,11 @@ The Eye of Maria is a project developed for Hack the Deep, American Museum of Na
 
 
 <a href="https://imgflip.com/gif/24d8zz"><img src="https://i.imgflip.com/24d8zz.gif" /></a>
+
 [Live Demo](https://hackthedeep.github.io/the-eye-of-maria/)
 
-
+![Screenshot](https://i.imgur.com/1id3pAT.png)
+![Screenshot](https://i.imgur.com/SSsG0iG.png)
 
 Credits:
 Hurricane by Masrur Mahmood from the Noun Project
