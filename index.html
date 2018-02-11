@@ -1,8 +1,131 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Maria</title>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body>
+    <style>
+      #map {
+        width: 100%;
+        top:0;
+        bottom: 0;
+        position:absolute;
+      }
+
+      #inset {
+        position: absolute;
+        width: 95%;
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: white;
+        bottom:20px;
+      }
+
+      #slider {
+        width:100%;
+      } 
+    </style>
+    <div id='map'></div>
+    </div>
+    <div id='inset'>
+      <div class='session' id='sliderbar'>
+        <h2>time: <label id='active-day'>20170827</label></h2>
+        <input id='slider' class='row' type='range' min='1505574000000' max='1506805200000' step='21600000' value='1505574000000' />
+      </div>
+    </div>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiYmRvbiIsImEiOiJjamRpMWwxczMxNXg3MnFtZjY5dzJqeTJxIn0.JVY5527uh_HLMJu-eEoFbg';
+      var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'style.json',
+          zoom: 3,
+          center: [-70.36,16.06]
+      });
+      var date_array = [
+        '20170827',
+        '20170828',
+        '20170829',
+        '20170830',
+        '20170831',
+        '20170901',
+        '20170902',
+        '20170903',
+        '20170904',
+        '20170905',
+        '20170906',
+        '20170907',
+        '20170908',
+        '20170909',
+        '20170910',
+        '20170911',
+        '20170912',
+        '20170913',
+        '20170914',
+        '20170915',
+        '20170916',
+        '20170917',
+        '20170918',
+        '20170919',
+        '20170920',
+        '20170921',
+        '20170922',
+        '20170923',
+        '20170924',
+        '20170925',
+        '20170926',
+        '20170927',
+        '20170928',
+        '20170929',
+        '20170930',
+        '20171001',
+        '20171002',
+        '20171003',
+        '20171004',
+        '20171005',
+        '20171006',
+        '20171007',
+        '20171008',
+        '20171009',
+        '20171010',
+        '20171011',
+        '20171012',
+        '20171013',
+        '20171014',
+        '20171015',
+        '20171016'
+      ]
+      map.addControl(new mapboxgl.NavigationControl());
+
+
+      var storm = [];
+      $.getJSON('datasets/storm_track.json', function(data) {
+        storm = data.map(function(v) { 
+          v['date'] = Date.parse(v['timestamp'])
+          return v;
+        });
+        console.log(storm);
+      });
+
+      document.getElementById('slider').addEventListener('input', function(e) {
+        var queryDate = e.target.value;
+        var queryDateObj = new Date(+queryDate).toString();
+        document.getElementById('active-day').innerText = queryDateObj;
+        var currentTrackPoint;
+
+        storm.forEach(function(p) {
+          if (p['date'] <= queryDate) {
+            currentTrackPoint = p;
+          } else {
+            map.getSource("storm").setData({'type':'Point','coordinates':[currentTrackPoint.lon,currentTrackPoint.lat]})
+          }
+        });
+
+        //var day = parseInt(e.target.value);
+        //var the_day = date_array[day];
+        //map.setFilter('floats', ['==', ['get', 'ymd'], the_day]);
+      });
+    </script>
   </body>
 </html>

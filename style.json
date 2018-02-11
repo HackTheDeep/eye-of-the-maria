@@ -1,0 +1,57 @@
+{
+  "version":8,
+  "name": "maria",
+  "sources": {
+    "mapbox": {
+      "type": "vector",
+      "url": "mapbox://mapbox.mapbox-streets-v7"
+    },
+    "floats": {
+      "type":"geojson",
+      "data":"datasets/floats.geojson"
+    },
+    "storm": {
+      "type":"geojson",
+      "data":{
+        "type":"FeatureCollection",
+        "features":[]
+      }
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+          "background-color": "#dedede"
+      }
+    },
+    {
+        "id": "water",
+        "type": "fill",
+        "source": "mapbox",
+        "source-layer": "water",
+        "paint": {
+            "fill-color": "#a0cfdf"
+        }
+    },
+    {
+        "id": "floats",
+        "type": "circle",
+        "source": "floats",
+        "paint": {
+            "circle-radius":5,
+            "circle-color": "blue"
+        }
+    },
+    {
+        "id": "storm",
+        "type": "circle",
+        "source": "storm",
+        "paint": {
+            "circle-radius":5,
+            "circle-color": "red"
+        }
+    }
+  ]
+}
