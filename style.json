@@ -38,7 +38,7 @@
                 ["all",
                   [">=",["to-number",["get","timestamp"]],1505574000000],
                   ["<=",["to-number",["get","timestamp"]],1506805200000]
-                ],"red","blue"],
+                ],"red","green"],
             "circle-opacity":0.1
         }
     }
